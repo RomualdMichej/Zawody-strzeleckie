@@ -1,6 +1,6 @@
 <%@ taglib prefix="form"
            uri="http://www.springframework.org/tags/form" %>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <h2>DODAWANIE NOWYCH ZAWODNIKÓW</h2>
 
@@ -23,11 +23,6 @@
     Email: <form:input path="email"/> <br />
 
     Hasło: <form:input path="password"/> <br />
-
-<%--    Starty:--%>
-<%--    <jsp:useBean id="allStarts" scope="request" type="java.util.List"/>--%>
-<%--    <form:checkboxes path="starts" items="${allStarts}"--%>
-<%--                     itemLabel="begin" itemValue="id"/>--%>
 
     <input type="submit" value="Zapisz!"/>
 

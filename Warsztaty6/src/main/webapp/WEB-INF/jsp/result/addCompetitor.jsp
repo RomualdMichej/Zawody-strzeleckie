@@ -1,8 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form"
            uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<h5><a href="/">Powrot na strone glowna</a></h5>
+<h5><a href="/">Powrot na strone główna</a></h5>
 
 <form method="post">
 

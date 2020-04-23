@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <h5><a href="/">Powrot na strone glowna</a></h5>
 
@@ -10,7 +11,7 @@
 <tr>
     <th scope="col"><h1>Nazwa</h1></th>
     <th scope="col"><h1>Data</h1></th>
-    <th scope="col"><h1>Godzina ropoczęcia</h1></th>
+    <th scope="col"><h1>Godzina rozpoczęcia</h1></th>
     <th scope="col"><h1>Godzina zakończenia</h1></th>
     <th scope="col"><h1>Konkurencje</h1></th>
     <th scope="col"><h1>Opcje</h1></th>

@@ -30,9 +30,9 @@ public interface StartRepository extends JpaRepository<Start, Long>, StartReposi
     @Query("update Start s set s.competitor=null where s.id = :id")
     void mergeToNull(@Param("id") long id);
 
-    @Modifying
-    @Query("update Start s set s.begin = :begin, s.competition = :competition, s.competitor = :competitor  where s.event = :event")
-    void updateStart(@Param("begin")String begin, @Param("competition") Competition competition,
-                @Param("competitor") Competitor competitor, @Param("event") Event event);
+//    @Modifying
+//    @Query("update Start s set s.begin = :begin, s.competition = :competition, s.competitor = :competitor  where s.event = :event")
+//    void updateStart(@Param("begin")String begin, @Param("competition") Competition competition,
+//                @Param("competitor") Competitor competitor, @Param("event") Event event);
 
 }

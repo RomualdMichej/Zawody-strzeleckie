@@ -18,23 +18,23 @@ public interface EventRepository extends JpaRepository<Event, Long>, EventReposi
 
     Event findById(long id);
 
-    void deleteAllByCompetitionList(Competition competition);
+//    void deleteAllByCompetitionList(Competition competition);
+
+    List<Event> findAllByCompetitionList(Competition competition);
 
     @Modifying
     @Query("update Event e set e.competitionList=null where e.competitionList = :competition")
     void updateToNull(@Param("competition") Competition competition);
 
-    @Modifying
-    @Query("update Event e set e.name = :name, e.date = :date," +
-            " e.startTime = :startTime, e.endTime = :endTime, e.competitionList= :competitionList " +
-            "where e.id = :id")
-    void updateEvent(@Param("name")String name,
-                     @Param("date") String date,
-                     @Param("startTime") String startTime,
-                     @Param("endTime") String endTime,
-                     @Param("competitionList") List<Competition> competitionList,
-                     @Param("id") long id);
-
-    List<Event> findAllByCompetitionList(Competition competition);
+//    @Modifying
+//    @Query("update Event e set e.name = :name, e.date = :date," +
+//            " e.startTime = :startTime, e.endTime = :endTime, e.competitionList= :competitionList " +
+//            "where e.id = :id")
+//    void updateEvent(@Param("name")String name,
+//                     @Param("date") String date,
+//                     @Param("startTime") String startTime,
+//                     @Param("endTime") String endTime,
+//                     @Param("competitionList") List<Competition> competitionList,
+//                     @Param("id") long id);
 
 }

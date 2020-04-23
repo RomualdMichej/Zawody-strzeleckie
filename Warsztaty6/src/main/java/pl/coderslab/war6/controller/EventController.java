@@ -6,11 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.war6.model.Competition;
 import pl.coderslab.war6.model.Event;
+import pl.coderslab.war6.model.Result;
 import pl.coderslab.war6.model.Start;
-import pl.coderslab.war6.repository.CompetitionRepository;
-import pl.coderslab.war6.repository.CompetitorRepository;
-import pl.coderslab.war6.repository.EventRepository;
-import pl.coderslab.war6.repository.StartRepository;
+import pl.coderslab.war6.repository.*;
 import pl.coderslab.war6.util.TimePeriodResolver;
 import pl.coderslab.war6.util.ViewHelper;
 
@@ -31,11 +29,14 @@ public class EventController {
 
     private final CompetitorRepository competitorRepository;
 
-    public EventController(EventRepository eventRepository, CompetitionRepository competitionRepository, StartRepository startRepository, CompetitorRepository competitorRepository) {
+    private final ResultRepository resultRepository;
+
+    public EventController(EventRepository eventRepository, CompetitionRepository competitionRepository, StartRepository startRepository, CompetitorRepository competitorRepository, ResultRepository resultRepository) {
         this.eventRepository = eventRepository;
         this.competitionRepository = competitionRepository;
         this.startRepository = startRepository;
         this.competitorRepository = competitorRepository;
+        this.resultRepository = resultRepository;
     }
 
     @ModelAttribute("allCompetitions")
@@ -89,6 +90,13 @@ public class EventController {
     @PostMapping("remove")
     public String removeEvent(@RequestParam long toRemoveId, @ModelAttribute ViewHelper viewHelper) {
         if(viewHelper.getOption().equals("confirmed")) {
+            List<Result> resultList = resultRepository.findAllByEvent(eventRepository.findById(toRemoveId));
+            for (Result result : resultList) {
+                result.setPassEventData(toRemoveId + "." + " "
+                        + eventRepository.findById(toRemoveId).getName() + " "
+                        + eventRepository.findById(toRemoveId).getDate());
+                result.setEvent(null);
+            }
             eventRepository.deleteById(toRemoveId);
         }
         return "redirect:";

@@ -17,6 +17,10 @@ public class Result {
 
     private int sum;
 
+    private String passEventData;
+
+    private String passCompetitionData;
+
     @Range(min = 0, max = 10)
     private int w10;
 
@@ -61,6 +65,14 @@ public class Result {
         return event;
     }
 
+    public String getPassEventData() {
+        return passEventData;
+    }
+
+    public String getPassCompetitionData() {
+        return passCompetitionData;
+    }
+
     public void setResultList(String reultList) {
         this.resultList = reultList;
     }
@@ -83,6 +95,14 @@ public class Result {
 
     public void setEvent(Event event) {
         this.event = event;
+    }
+
+    public void setPassEventData(String passEventData) {
+        this.passEventData = passEventData;
+    }
+
+    public void setPassCompetitionData(String passCompetitionData) {
+        this.passCompetitionData = passCompetitionData;
     }
 
     @Override

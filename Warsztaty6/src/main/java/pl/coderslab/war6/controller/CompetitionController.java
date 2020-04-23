@@ -3,10 +3,7 @@ package pl.coderslab.war6.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.war6.model.Competition;
-import pl.coderslab.war6.model.Competitor;
-import pl.coderslab.war6.model.Event;
-import pl.coderslab.war6.model.Start;
+import pl.coderslab.war6.model.*;
 import pl.coderslab.war6.repository.*;
 import pl.coderslab.war6.util.TimePeriodResolver;
 import pl.coderslab.war6.util.ViewHelper;
@@ -65,7 +62,14 @@ public class CompetitionController {
     public String removeCompetition(@RequestParam long toRemoveId, @ModelAttribute ViewHelper viewHelper) {
         List<Competition> competitions;
         Set<Competition> competitions1;
+        List<Competition> competitions2;
         if(viewHelper.getOption().equals("confirmed")) {
+            List<Result> resultList = resultRepository.findAllByCompetition(competitionRepository.findById(toRemoveId));
+            for (Result result : resultList) {
+                result.setPassCompetitionData(toRemoveId + "." + " "
+                        + competitionRepository.findById(toRemoveId).getName());
+                result.setCompetition(null);
+            }
             List<Event> events = eventRepository.findAllByCompetitionList(competitionRepository.findById(toRemoveId));
             for (Event event : events) {
                 competitions = event.getCompetitionList();

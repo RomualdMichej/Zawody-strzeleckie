@@ -1,9 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<h5><a href="/">Powrot na strone glowna</a></h5>
+<h5><a href="/">Powrot na strone główną</a></h5>
 
 <form action="addEvent" method="get">
-    <input type="submit" value="Dodaj zawody">
+    <input type="submit" value="Dodaj wynik">
 </form>
 
 <table border="1">

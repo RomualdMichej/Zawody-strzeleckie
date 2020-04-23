@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <h2>Czy na pewno chcesz usunac zrezygnować z tego startu?</h2>
 <input type="hidden" name="toReduceStartId" value="${start.id}">
