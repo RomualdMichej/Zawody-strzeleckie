@@ -3,7 +3,9 @@
 
 <h5><a href="/">Powrot na strone glowna</a></h5>
 
-<h3>Wybierz zawody:</h3>
+<c:choose>
+    <c:when test="${not empty allEvents}">
+<h3>Wybierz zawody dla zawodnika ${competitor.firstName} ${competitor.lastName}</h3>
 
 <form method="post">
 
@@ -19,18 +21,29 @@
 
 </form>
 
-${competitor.firstName} ${competitor.lastName}<br />
-<c:forEach items="${startList}" var="start">
-    <form method="get"
-          action="reduce">
+        <table border="1">
+            <tr>
+                <th><h1>Zawody</h1></th>
+                <th><h1>Konkurencja</h1></th>
+                <th><h1>Godzina startu</h1></th>
+                <th><h1>Zrezygnuj</h1></th>
+            </tr>
+            <tr>
+            <c:forEach items="${startList}" var="start">
+                <form method="get" action="reduce">
+                <input type="hidden" name="toReduceStartId" value="${start.id}">
+                <input type="hidden" name="competitorId" value="${competitor.id}">
+                    <td>${start.event.name}</td>
+                    <td>${start.competition.name}</td>
+                    <td>${start.begin}</td>
+                    <td><input type="submit" value="Zrezygnuj"></td>
 
-        <input type="hidden" name="toReduceStartId" value="${start.id}">
-        <input type="hidden" name="competitorId" value="${competitor.id}">
-
-        ${start.begin} ${start.event.name}  ${start.competition.name}  ${start.competitor.firstName}
-
-        <input type="submit" value="Usun"></br>
-
-    </form>
-
-</c:forEach>
+                </form>
+            </tr>
+            </c:forEach>
+        </table>
+    </c:when>
+    <c:otherwise>
+        <p>Lista zawodów jest pusta.</p>
+    </c:otherwise>
+</c:choose>

@@ -16,8 +16,6 @@
         <form:select path="resultList" items="${s}"/><br />
 
     </c:forEach><br />
-    Dziesiątki wewnętrzne: <form:select path="w10" items="${list}"/><br />
-
 
     <input type="submit" value="Zapisz!"/>
 

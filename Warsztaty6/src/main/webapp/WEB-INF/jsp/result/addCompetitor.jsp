@@ -3,13 +3,13 @@
            uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<h5><a href="/">Powrot na strone główna</a></h5>
+<h5><a href="/">Powrot na strone głórrrrrrrrrrrrrrwna</a></h5>
 
 <form method="post">
 
     <select name="competitorId">
 
-    <c:forEach items="${allCompetitors}" var="competitor">
+    <c:forEach items="${competitorList}" var="competitor">
 
         <option value="${competitor.id}">${competitor.fullName}</option>
 

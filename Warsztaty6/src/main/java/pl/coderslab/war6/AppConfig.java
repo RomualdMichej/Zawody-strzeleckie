@@ -10,10 +10,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableJpaRepositories(basePackages = "pl.coderslab.war6.repository")
 public class AppConfig implements WebMvcConfigurer {
 
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/select").setViewName("result/select");
-
-    }
+//    @Override
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        registry.addViewController("/select").setViewName("result/select");
+//
+//    }
 }
 

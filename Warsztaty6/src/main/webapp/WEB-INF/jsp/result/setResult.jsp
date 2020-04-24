@@ -13,7 +13,6 @@
     <form:hidden path="competition"/> <br />
     <form:hidden path="competitor"/> <br />
     <form:hidden path="event"/> <br />
-    W10: <form:select path="w10" items="${list}"/><br />
 
     Wyniki:<br />
     <c:forEach items="${superList}" var="s">

@@ -21,8 +21,8 @@ public class Result {
 
     private String passCompetitionData;
 
-    @Range(min = 0, max = 10)
-    private int w10;
+//    @Range(min = 0, max = 10)
+//    private int w10;
 
     @ManyToOne
     private Competition competition;
@@ -45,9 +45,9 @@ public class Result {
         return sum;
     }
 
-    public int getW10() {
-        return w10;
-    }
+//    public int getW10() {
+//        return w10;
+//    }
 
     public Competition getCompetition() {
         return competition;
@@ -81,9 +81,9 @@ public class Result {
         this.sum = sum;
     }
 
-    public void setW10(int w10) {
-        this.w10 = w10;
-    }
+//    public void setW10(int w10) {
+//        this.w10 = w10;
+//    }
 
     public void setCompetition(Competition competition) {
         this.competition = competition;
@@ -105,16 +105,4 @@ public class Result {
         this.passCompetitionData = passCompetitionData;
     }
 
-    @Override
-    public String toString() {
-        return "Result{" +
-                "id=" + id +
-                ", resultList='" + resultList + '\'' +
-                ", sum=" + sum +
-                ", w10=" + w10 +
-                ", competition=" + competition +
-                ", competitor=" + competitor +
-                ", event=" + event +
-                '}';
-    }
 }

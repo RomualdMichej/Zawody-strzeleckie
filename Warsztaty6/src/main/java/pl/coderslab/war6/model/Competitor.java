@@ -81,6 +81,10 @@ public class Competitor {
         return id + "." + " " + firstName + " " + lastName;
     }
 
+    public String getFullName1() {
+        return firstName + " " + lastName;
+    }
+
     public List<Start> getStarts() {
         return starts;
     }

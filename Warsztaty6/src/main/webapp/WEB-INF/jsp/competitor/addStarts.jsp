@@ -22,14 +22,14 @@
     <c:forEach items="${superList}" var="s">
 
         <c:forEach items="${s}" var="start" end="0">
-            ${start.competition.name}
+            <p>${start.competition.name}</p>
         </c:forEach>
-        </br>
+        <P>
         <form:select path="starts" items="${s}"
                              itemLabel="begin" itemValue="id"/>
-            </br>
+            </p>
 
-        </c:forEach>
+    </c:forEach>
 
         <input type="submit" value="Wybierz!"/>
 
