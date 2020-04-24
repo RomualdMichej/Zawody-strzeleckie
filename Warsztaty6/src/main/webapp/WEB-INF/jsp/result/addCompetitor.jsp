@@ -2,8 +2,14 @@
 <%@ taglib prefix="form"
            uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 
-<h5><a href="/">Powrot na strone głórrrrrrrrrrrrrrwna</a></h5>
+<head>
+    <title>Wybierz zwodnika</title>
+</head>
+
+<body>
+<%@ include file="/WEB-INF/jsp/header.jsp" %>
 
 <form method="post">
 
@@ -18,3 +24,7 @@
 
     <input type="submit" value="Wybierz!"/>
 </form>
+
+<%@ include file="/WEB-INF/jsp/footer.jsp" %>
+</body>
+</html>

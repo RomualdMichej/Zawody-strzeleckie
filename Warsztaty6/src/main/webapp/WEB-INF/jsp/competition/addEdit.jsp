@@ -1,9 +1,16 @@
 <%@ taglib prefix="form"
            uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+
+<head>
+    <title>Edycja Konkurencji</title>
+</head>
+
+<body>
+<%@ include file="/WEB-INF/jsp/header.jsp" %>
 
 <h2>DODAWANIE NOWYCH KONKURENCJI</h2>
-
 
 <form:form method="post"
            modelAttribute="competition">
@@ -21,3 +28,7 @@
     <input type="submit" value="Zapisz!"/>
 
 </form:form>
+
+<%@ include file="/WEB-INF/jsp/footer.jsp" %>
+</body>
+</html>

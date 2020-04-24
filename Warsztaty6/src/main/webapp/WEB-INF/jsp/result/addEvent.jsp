@@ -1,7 +1,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 
-<h5><a href="/">Powrot na strone glowna</a></h5>
+<head>
+    <title>Wybiezr zawody</title>
+</head>
+
+<body>
+<%@ include file="/WEB-INF/jsp/header.jsp" %>
 
 <c:choose>
     <c:when test="${not empty eventList}">
@@ -26,3 +32,7 @@
         <p>Ten zawodnik nie startuje w żadnej konkurencji.</p>
     </c:otherwise>
 </c:choose>
+
+<%@ include file="/WEB-INF/jsp/footer.jsp" %>
+</body>
+</html>

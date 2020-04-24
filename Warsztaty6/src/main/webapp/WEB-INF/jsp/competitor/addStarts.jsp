@@ -2,8 +2,14 @@
            uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 
-<h5><a href="/">Powrot na strone glowna</a></h5>
+<head>
+    <title>Wybierz godzinę startu</title>
+</head>
+
+<body>
+<%@ include file="/WEB-INF/jsp/header.jsp" %>
 
 <form:form method="post"
            modelAttribute="competitor" action="edit">
@@ -21,6 +27,8 @@
 
     <c:forEach items="${superList}" var="s">
 
+        <p>Wybierz godzinę startu</p>
+
         <c:forEach items="${s}" var="start" end="0">
             <p>${start.competition.name}</p>
         </c:forEach>
@@ -34,4 +42,8 @@
         <input type="submit" value="Wybierz!"/>
 
 </form:form>
+
+<%@ include file="/WEB-INF/jsp/footer.jsp" %>
+</body>
+</html>
 

@@ -2,7 +2,15 @@
            uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 
+<head>
+    <title>Dodawanie Wyników</title>
+</head>
+
+<body>
+
+<%@ include file="/WEB-INF/jsp/header.jsp" %>
 
 <h2>DODAWANIE WYNIKÓW</h2>
 
@@ -24,3 +32,7 @@
     <input type="submit" value="Zapisz!"/>
 
 </form:form>
+
+<%@ include file="/WEB-INF/jsp/footer.jsp" %>
+</body>
+</html>

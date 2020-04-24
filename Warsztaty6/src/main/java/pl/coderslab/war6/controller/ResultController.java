@@ -130,27 +130,6 @@ public class ResultController {
     @GetMapping("resultList")
     public String result(Model model) {
         model.addAttribute("competitionList", competitionRepository.findAll());
-        //--------------------------------------------------------------------
-//        List<Result> resultList = resultRepository.findAll();
-//        for (Result result : resultList) {
-//            System.out.println("1 " + result.getSum());
-//        }
-//        Collections.sort(resultList, new Comparator<Result>() {
-//            @Override
-//            public int compare(Result result, Result t1) {
-//                return  t1.getSum() - result.getSum();
-//            }
-//        });
-//        System.out.println("\n");
-//        for (Result result : resultList) {
-//            System.out.println("2 " + result.getSum() + result.getCompetition().getName());
-//        }
-//        resultList.sort((result, t1) -> t1.getW10() - result.getW10());
-//        System.out.println("\n");
-//        for (Result result : resultList) {
-//            System.out.println("3 " + result.getSum() + result.getCompetition().getName());
-//        }
-        //--------------------------------------------------------------------
         return "result/byCompetition";
     }
 
@@ -158,7 +137,9 @@ public class ResultController {
     public String byCompetition(@RequestParam long competitionId, Model model) {
         List<Result> resultList = competitionRepository.findById(competitionId).getResults();
         resultList.sort((result, t1) -> t1.getSum() - result.getSum());
-        System.out.println("\n");
+        for (int i = 0; i < resultList.size(); i++) {
+            resultList.get(i).setPlace(i + 1);
+        }
         model.addAttribute("resultList", resultList);
         model.addAttribute("competition", competitionRepository.findById(competitionId));
 
@@ -198,7 +179,7 @@ public class ResultController {
     }
 
     @PostMapping("edit")
-    public String editResult(Result result, Model model) {
+    public String editResult(Result result) {
 
         String resultList = result.getResultList();
         String[] parts = resultList.split(",");
@@ -211,8 +192,7 @@ public class ResultController {
         result.setResultList(sb.toString());
         result.setSum(sum);
         resultRepository.save(result);
-        model.addAttribute("resultList", resultRepository.findAll());
-        return "result/all";
+        return "redirect:";
     }
 
     @GetMapping("setCompetitor")
@@ -240,23 +220,51 @@ public class ResultController {
                      @RequestParam long competitionId,
                      Model model){
         List<Result> resultList = competitorRepository.findById(competitorId).getResults();
-        for (Result result : resultList) {
-            System.out.println("1 " + result.getSum());
-        }
+        resultList.removeIf(result -> result.getPassCompetitionData() != null);
         resultList.removeIf(result -> result.getCompetition().getId() != competitionId);
-        System.out.println("\n");
-        for (Result result : resultList) {
-            System.out.println("2 " + result.getSum());
-        }
         resultList.sort((result, t1) -> t1.getSum() - result.getSum());
-        System.out.println("\n");
-        for (Result result : resultList) {
-            System.out.println("3 " + result.getSum());
+        for (int i = 0; i < resultList.size(); i++) {
+            resultList.get(i).setPlace(i + 1);
         }
         model.addAttribute("competition", competitionRepository.findById(competitionId));
         model.addAttribute("competitor", competitorRepository.findById(competitorId));
         model.addAttribute("resultList", resultList);
 
         return "result/sortedByCompetitor";
+    }
+    @GetMapping("setEvent")
+    public String initSetEvent(Model model) {
+        model.addAttribute("eventList", eventRepository.findAll());
+        return "result/byEvent";
+    }
+
+    @PostMapping("setEvent")
+    public String setEvent(@RequestParam long eventId, Model model) {
+//        List<Result> resultList = resultRepository.findAll();
+        List<Competition> competitionList = eventRepository.findById(eventId).getCompetitionList();
+//        resultList.removeIf(result -> result.getEvent().getId() != eventId);
+//        model.addAttribute("resultList", resultList);
+        model.addAttribute("event", eventRepository.findById(eventId));
+        model.addAttribute("competitionList", eventRepository.findById(eventId).getCompetitionList());
+
+        return "result/competitions";
+    }
+
+    @PostMapping("createRan2")
+    String createRan2(@RequestParam long eventId,
+                      @RequestParam long competitionId,
+                      Model model){
+        List<Result> resultList = resultRepository.findAll();
+        resultList.removeIf(result -> result.getEvent().getId() != eventId);
+        resultList.removeIf(result -> result.getCompetition().getId() != competitionId);
+        resultList.sort((result, t1) -> t1.getSum() - result.getSum());
+        for (int i = 0; i < resultList.size(); i++) {
+            resultList.get(i).setPlace(i + 1);
+        }
+        model.addAttribute("resultList", resultList);
+        model.addAttribute("event", eventRepository.findById(eventId));
+        model.addAttribute("competition", competitionRepository.findById(competitionId));
+
+        return "result/sortedByEvent";
     }
 }

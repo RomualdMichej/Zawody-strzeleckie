@@ -1,7 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<h5><a href="/">Powrot na strone glowna</a></h5>
+<html>
+
+<head>
+    <title>Konkurencje</title>
+</head>
+
+<body>
+
+<%@ include file="/WEB-INF/jsp/header.jsp" %>
 
 <form action="add" method="get">
     <input type="submit" value="Dodaj konkurencję">
@@ -37,3 +45,7 @@
     </c:forEach>
 
 </table>
+
+<%@ include file="/WEB-INF/jsp/footer.jsp" %>
+</body>
+</html>

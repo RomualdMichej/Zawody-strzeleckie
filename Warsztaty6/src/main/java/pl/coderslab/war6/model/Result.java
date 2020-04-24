@@ -17,6 +17,8 @@ public class Result {
 
     private int sum;
 
+    private int place;
+
     private String passEventData;
 
     private String passCompetitionData;
@@ -73,6 +75,10 @@ public class Result {
         return passCompetitionData;
     }
 
+    public int getPlace() {
+        return place;
+    }
+
     public void setResultList(String reultList) {
         this.resultList = reultList;
     }
@@ -99,6 +105,10 @@ public class Result {
 
     public void setPassEventData(String passEventData) {
         this.passEventData = passEventData;
+    }
+
+    public void setPlace(int place) {
+        this.place = place;
     }
 
     public void setPassCompetitionData(String passCompetitionData) {
