@@ -11,7 +11,8 @@
 
 <h3>Konkurencja ${competition.name}</h3>
 <h3>Zawodnik ${competitor.fullName1}</h3>
-
+<c:choose>
+<c:when test="${not empty resultList}">
 <table border="1">
     <tr>
         <th><h1>Miejsce</h1></th>
@@ -45,7 +46,11 @@
     </c:forEach>
 
 </table>
-
+</c:when>
+    <c:otherwise>
+        Lista wyników dla tego zawodnika dla tej konkurencji jest pusta.
+    </c:otherwise>
+</c:choose>
 <%@ include file="/WEB-INF/jsp/footer.jsp" %>
 </body>
 </html>
