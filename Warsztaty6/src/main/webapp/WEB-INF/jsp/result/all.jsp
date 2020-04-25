@@ -14,6 +14,7 @@
 </form>
 
 <table border="1">
+    <thead>
     <tr>
         <th><h1>Zawodni</h1></th>
         <th><h1>Komkurencja</h1></th>
@@ -21,7 +22,8 @@
         <th><h1>Suma</h1></th>
         <th><h1>Opcje</h1></th>
     </tr>
-
+    </thead>
+    <tbody>
     <c:forEach items="${resultList}" var="result">
 
         <tr>
@@ -44,7 +46,7 @@
                 </form></td>
         </tr>
     </c:forEach>
-
+    </tbody>
 </table>
 
 <%@ include file="/WEB-INF/jsp/footer.jsp" %>

@@ -1,10 +1,21 @@
 <html>
 
 <head>
-    <title>Stopka</title>
+    <style>
+    #to {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333333;
+        float: left;
+        color: beige;
+
+    }
+    </style>
 </head>
 
 <body>
-<h3>STOPKA</h3>
+<h5 id="to">Created By Romuald Michej</h5>
 </body>
 </html>

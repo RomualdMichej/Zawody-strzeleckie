@@ -15,5 +15,6 @@ public class AppConfig implements WebMvcConfigurer {
 //        registry.addViewController("/select").setViewName("result/select");
 //
 //    }
+
 }
 

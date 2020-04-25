@@ -3,49 +3,66 @@
 
 <html>
 
-<head>
-    <title>Konkurencje</title>
-</head>
+    <head>
+        <title>Konkurencje</title>
+        <style>
+            .new {
+                background-color: #111111;
+            }
 
-<body>
+            th, td {
+                border: 1px solid black;
+                padding: 10px 15px;
+                border-collapse: separate;
+                background-color: cornflowerblue;
+            }
+            h3{
+                color: white;
+            }
+        </style>
+    </head>
 
-<%@ include file="/WEB-INF/jsp/header.jsp" %>
+    <body class="new">
 
-<form action="add" method="get">
-    <input type="submit" value="Dodaj konkurencję">
-</form>
+    <%@ include file="/WEB-INF/jsp/header.jsp" %>
 
-<table border="1">
-    <tr>
-        <th scope="col"><h1>Nazwa</h1></th>
-        <th scope="col"><h1>Opis</h1></th>
-        <th scope="col"><h1>Ilość osób</h1></th>
-        <th scope="col"><h1>Czas trwania</h1></th>
-        <th scope="col"><h1>Opcje</h1></th>
-    </tr>
+    <form action="add" method="get">
+        <input type="submit" value="Dodaj konkurencję">
+    </form>
 
-    <c:forEach items="${allCompetitions}" var="competition">
+    <table border="1">
+        <thead>
+            <tr>
+                <th scope="col"><h1>Nazwa</h1></th>
+                <th scope="col"><h1>Opis</h1></th>
+                <th scope="col"><h1>Ilość osób</h1></th>
+                <th scope="col"><h1>Czas trwania</h1></th>
+                <th scope="col"><h1>Opcje</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach items="${allCompetitions}" var="competition">
 
-        <tr>
-            <td><h3>${competition.name}</h3></td>
-            <td><h5>${competition.description}</h5></td>
-            <td><h5>${competition.personQuantity}</h5></td>
-            <td><h5>${competition.period}</h5></td>
-            <td><form method="get"
-                      action="edit">
-                <input type="hidden" name="toEditId" value="${competition.id}">
-                <input type="submit" value="Edytuj">
-            </form>
-                <form method="get"
-                      action="remove">
-                    <input type="hidden" name="toRemoveId" value="${competition.id}">
-                    <input type="submit" value="Usun">
-                </form></td>
-        </tr>
-    </c:forEach>
+                <tr>
+                    <td><h5>${competition.name}</h5></td>
+                    <td><h5>${competition.description}</h5></td>
+                    <td><h5>${competition.personQuantity}</h5></td>
+                    <td><h5>${competition.period}</h5></td>
+                    <td><form method="get"
+                              action="edit">
+                        <input type="hidden" name="toEditId" value="${competition.id}">
+                        <input type="submit" value="Edytuj">
+                    </form>
+                        <form method="get"
+                              action="remove">
+                            <input type="hidden" name="toRemoveId" value="${competition.id}">
+                            <input type="submit" value="Usun">
+                        </form></td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
 
-</table>
-
-<%@ include file="/WEB-INF/jsp/footer.jsp" %>
-</body>
+    <%@ include file="/WEB-INF/jsp/footer.jsp" %>
+    </body>
 </html>

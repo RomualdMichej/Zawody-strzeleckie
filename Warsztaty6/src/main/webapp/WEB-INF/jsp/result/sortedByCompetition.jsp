@@ -4,29 +4,46 @@
 
 <head>
     <title>Wyedług Konkurencji</title>
+    <style>
+        .new {
+            background-color: #111111;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px 15px;
+            border-collapse: separate;
+            background-color: cornflowerblue;
+        }
+        h3{
+            color: white;
+        }
+    </style>
 </head>
 
-<body>
+<body class="new">
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
 <c:choose>
 <c:when test="${not empty resultList}">
 <h3>Konkurencja ${competition.name}</h3>
 
 <table border="1">
+    <thead>
     <tr>
-        <th><h1>Miejsce</h1></th>
-        <th><h1>Uczestnik</h1></th>
-        <th><h1>Zawody</h1></th>
-        <th><h1>Wyniki</h1></th>
-        <th><h1>Suma</h1></th>
-        <th ><h1>Opcje</h1></th>
+        <th scope="col"><h1>Miejsce</h1></th>
+        <th scope="col"><h1>Uczestnik</h1></th>
+        <th scope="col"><h1>Zawody</h1></th>
+        <th scope="col"><h1>Wyniki</h1></th>
+        <th scope="col"><h1>Suma</h1></th>
+        <th scope="col"><h1>Opcje</h1></th>
     </tr>
-
+    </thead>
+    <tbody>
     <c:forEach items="${resultList}" var="result">
 
         <tr>
             <td><h5>${result.place}</h5></td>
-            <td><h3>${result.competitor.fullName1}</h3></td>
+            <td><h5>${result.competitor.fullName1}</h5></td>
             <td><h5>${result.event.name} ${result.event.date}</h5></td>
             <td><h5>${result.resultList}</h5></td>
             <td><h5>${result.sum}</h5></td>
@@ -45,7 +62,7 @@
                 </form></td>
         </tr>
     </c:forEach>
-
+    </tbody>
 </table>
 
 </c:when>
