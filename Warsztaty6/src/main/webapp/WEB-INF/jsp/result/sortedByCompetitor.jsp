@@ -4,31 +4,32 @@
 
 <head>
     <title>Według Zawodnika</title>
-    <style>
-        .new {
-            background-color: #111111;
-        }
+    <link rel="stylesheet" href="/css/style.css">
+<%--    <style>--%>
+<%--        .new {--%>
+<%--            background-color: #111111;--%>
+<%--        }--%>
 
-        th, td {
-            border: 1px solid black;
-            padding: 10px 15px;
-            border-collapse: separate;
-            background-color: cornflowerblue;
-        }
-        h3{
-            color: white;
-        }
-    </style>
+<%--        th, td {--%>
+<%--            border: 1px solid black;--%>
+<%--            padding: 10px 15px;--%>
+<%--            border-collapse: separate;--%>
+<%--            background-color: cornflowerblue;--%>
+<%--        }--%>
+<%--        h3{--%>
+<%--            color: white;--%>
+<%--        }--%>
+<%--    </style>--%>
 </head>
 
 <body class="new">
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
 
-<h3>Konkurencja ${competition.name}</h3>
-<h3>Zawodnik ${competitor.fullName1}</h3>
+<h3 class="biel">Konkurencja ${competition.name}</h3>
+<h3 class="biel">Zawodnik ${competitor.fullName1}</h3>
 <c:choose>
 <c:when test="${not empty resultList}">
-<table border="1">
+<table >
     <thead>
     <tr>
         <th scope="col"><h1>Miejsce</h1></th>

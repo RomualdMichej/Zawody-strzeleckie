@@ -4,21 +4,23 @@
 
     <head>
         <title>Wybierz zawody</title>
-        <style>
-            .new {
-                background-color: #111111;
-            }
+        <link rel="stylesheet" href="/css/style.css">
 
-            th, td {
-                border: 1px solid black;
-                padding: 10px 15px;
-                border-collapse: separate;
-                background-color: cornflowerblue;
-            }
-            .tur{
-                color: white;
-            }
-        </style>
+    <%--        <style>--%>
+<%--            .new {--%>
+<%--                background-color: #111111;--%>
+<%--            }--%>
+
+<%--            th, td {--%>
+<%--                border: 1px solid black;--%>
+<%--                padding: 10px 15px;--%>
+<%--                border-collapse: separate;--%>
+<%--                background-color: cornflowerblue;--%>
+<%--            }--%>
+<%--            .tur{--%>
+<%--                color: white;--%>
+<%--            }--%>
+<%--        </style>--%>
     </head>
 
     <body class="new">
@@ -41,7 +43,7 @@
             <input type="submit" value="Wybierz!"/>
 
         </form>
-                <table border="1">
+                <table>
                     <thead>
                         <tr>
                             <th scope="col"><h1>Zawody</h1></th>
@@ -51,8 +53,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
                         <c:forEach items="${startList}" var="start">
+                            <tr>
                             <form method="get" action="reduce">
                             <input type="hidden" name="toReduceStartId" value="${start.id}">
                             <input type="hidden" name="competitorId" value="${competitor.id}">
@@ -61,8 +63,8 @@
                                 <td>${start.begin}</td>
                                 <td><input type="submit" value="Zrezygnuj"></td>
                             </form>
+                            </tr>
                         </c:forEach>
-                    </tr>
                     </tbody>
                 </table>
             </c:when>

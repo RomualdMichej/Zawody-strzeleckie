@@ -4,30 +4,31 @@
 
     <head>
         <title>Według Zawodów</title>
-        <style>
-            .new {
-                background-color: #111111;
-            }
 
-            th, td {
-                border: 1px solid black;
-                padding: 10px 15px;
-                border-collapse: separate;
-                background-color: cornflowerblue;
-            }
-            h3{
-                color: white;
-            }
-        </style>
+<%--        <style>--%>
+<%--            .new {--%>
+<%--                background-color: #111111;--%>
+<%--            }--%>
+
+<%--            th, td {--%>
+<%--                border: 1px solid black;--%>
+<%--                padding: 10px 15px;--%>
+<%--                border-collapse: separate;--%>
+<%--                background-color: cornflowerblue;--%>
+<%--            }--%>
+<%--            h3{--%>
+<%--                color: white;--%>
+<%--            }--%>
+<%--        </style>--%>
     </head>
 
     <body class="new">
     <%@ include file="/WEB-INF/jsp/header.jsp" %>
 
-    <h3>Zawody ${event.name}</h3>
-    <h3>Konkurencja ${competition.name}</h3>
+    <h3 class="biel">${event.name}</h3>
+    <h3 class="biel">Konkurencja ${competition.name}</h3>
 
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th scope="col"><h1>Miejsce</h1></th>

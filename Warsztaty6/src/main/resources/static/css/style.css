@@ -1,0 +1,53 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
+.table {
+    display: table;
+    margin: 0 auto;
+}
+.new {
+    background-color: gainsboro;
+}
+.to{
+    background-color: darkgray;
+    display: inline;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px 15px;
+    border-collapse: separate;
+    background-color: cornflowerblue;
+}
+
+h3 {
+    display: inline;
+    text-align: center;
+    background: cornflowerblue;
+}
+a{
+    color: white;
+}
+.biel{
+    background-color: darkgray;
+}

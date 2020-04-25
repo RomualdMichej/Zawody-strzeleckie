@@ -1,35 +1,37 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
-    <style>
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333333;
-        }
+        <link rel="stylesheet" href="/css/style.css">
 
-        li {
-            float: left;
-        }
+<%--        <style>--%>
+<%--        ul {--%>
+<%--            list-style-type: none;--%>
+<%--            margin: 0;--%>
+<%--            padding: 0;--%>
+<%--            overflow: hidden;--%>
+<%--            background-color: #333333;--%>
+<%--        }--%>
 
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 16px;
-            text-decoration: none;
-        }
+<%--        li {--%>
+<%--            float: left;--%>
+<%--        }--%>
 
-        li a:hover {
-            background-color: #111111;
-        }
-        .table {
-            display: table;
-            margin: 0 auto;
-        }
-    </style>
+<%--        li a {--%>
+<%--            display: block;--%>
+<%--            color: white;--%>
+<%--            text-align: center;--%>
+<%--            padding: 16px;--%>
+<%--            text-decoration: none;--%>
+<%--        }--%>
+
+<%--        li a:hover {--%>
+<%--            background-color: #111111;--%>
+<%--        }--%>
+<%--        .table {--%>
+<%--            display: table;--%>
+<%--            margin: 0 auto;--%>
+<%--        }--%>
+<%--    </style>--%>
     </head>
     <body>
                 <ul id="menu"  class="table">

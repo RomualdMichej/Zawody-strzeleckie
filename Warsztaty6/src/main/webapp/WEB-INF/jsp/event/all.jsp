@@ -1,22 +1,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" >--%>
 <html>
 <head>
     <title>Zawody</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .new {
-            background-color: #111111;
-        }
+    <link rel="stylesheet" href="/css/style.css">
+<%--    <style>--%>
+<%--        .new {--%>
+<%--            background-color: #111111;--%>
+<%--        }--%>
 
-        th, td {
-            border: 1px solid black;
-            padding: 10px 15px;
-            border-collapse: separate;
-            background-color: cornflowerblue;
-        }
-    </style>
+<%--        th, td {--%>
+<%--            border: 1px solid black;--%>
+<%--            padding: 10px 15px;--%>
+<%--            border-collapse: separate;--%>
+<%--            background-color: cornflowerblue;--%>
+<%--        }--%>
+<%--    </style>--%>
 </head>
 
 <body class="new">

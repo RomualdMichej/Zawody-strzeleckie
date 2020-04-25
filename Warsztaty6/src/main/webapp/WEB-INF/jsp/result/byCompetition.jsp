@@ -4,16 +4,18 @@
 
 <head>
     <title>Wybierz Konkurencje</title>
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
 
-<body>
+<body class="new">
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
 
 <form method="post">
 
 <c:choose>
     <c:when test="${not empty competitionList}">
-        <h3>Wybierz konkurencje</h3>
+        <h3 class="to">Wybierz konkurencje</h3>
 
 
             <p><c:forEach items="${competitionList}" var="competition">

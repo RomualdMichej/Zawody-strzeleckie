@@ -4,22 +4,24 @@
 
 <head>
     <title>Zawodnicy</title>
-    <style>
-        .new {
-            background-color: #111111;
-        }
+    <link rel="stylesheet" href="/css/style.css">
 
-        th, td {
-            border: 1px solid black;
-            padding: 10px 15px;
-            border-collapse: separate;
-            background-color: cornflowerblue;
-        }
-        h3{
-            color: white;
-        }
-    </style>
-</head>
+<%--    <style>--%>
+<%--        .new {--%>
+<%--            background-color: #111111;--%>
+<%--        }--%>
+
+<%--        th, td {--%>
+<%--            border: 1px solid black;--%>
+<%--            padding: 10px 15px;--%>
+<%--            border-collapse: separate;--%>
+<%--            background-color: cornflowerblue;--%>
+<%--        }--%>
+<%--        h3{--%>
+<%--            color: white;--%>
+<%--        }--%>
+<%--    </style>--%>
+<%--</head>--%>
 <body class="new">
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
 <form action="add" method="get">

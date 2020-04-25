@@ -4,9 +4,10 @@
 
 <head>
     <title>Wybiezr zawody</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="new">
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
 
 <c:choose>

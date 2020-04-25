@@ -3,23 +3,21 @@
 
 <head>
     <title>Rankingi</title>
-    <style>
-        .new {
-            background-color: #111111;
-        }
-        h3 {
-            display: inline;
-            text-align: center;
-            background: cornflowerblue;
-        }
-        a{
-            color: white;
-        }
-        /*div{*/
-        /*    display: table;*/
-        /*    margin: 0 auto;*/
-        /*}*/
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
+
+<%--    <style>--%>
+<%--        .new {--%>
+<%--            background-color: #111111;--%>
+<%--        }--%>
+<%--        h3 {--%>
+<%--            display: inline;--%>
+<%--            text-align: center;--%>
+<%--            background: cornflowerblue;--%>
+<%--        }--%>
+<%--        a{--%>
+<%--            color: white;--%>
+<%--        }--%>
+<%--    </style>--%>
 </head>
 
 <body class="new">
