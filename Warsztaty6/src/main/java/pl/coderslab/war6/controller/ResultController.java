@@ -256,6 +256,7 @@ public class ResultController {
                       Model model){
         List<Result> resultList = resultRepository.findAll();
         resultList.removeIf(result -> result.getEvent().getId() != eventId);
+        resultList.removeIf(result -> result.getPassCompetitionData() != null);
         resultList.removeIf(result -> result.getCompetition().getId() != competitionId);
         resultList.sort((result, t1) -> t1.getSum() - result.getSum());
         for (int i = 0; i < resultList.size(); i++) {

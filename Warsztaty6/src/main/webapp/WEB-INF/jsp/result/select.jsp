@@ -4,18 +4,25 @@
 <head>
     <title>Rankingi</title>
     <style>
+        .new {
+            background-color: #111111;
+        }
         h3 {
             display: inline;
             text-align: center;
+            background: cornflowerblue;
         }
-        div{
-            display: table;
-            margin: 0 auto;
+        a{
+            color: white;
         }
+        /*div{*/
+        /*    display: table;*/
+        /*    margin: 0 auto;*/
+        /*}*/
     </style>
 </head>
 
-<body>
+<body class="new">
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
 <div>
 <form action="addEvent" method="get">

@@ -29,9 +29,12 @@
             display: table;
             margin: 0 auto;
         }
+        .new {
+            background-color: #111111;
+        }
     </style>
 </head>
-<body>
+<body class="new">
 <ul id="menu"  class="table">
     <li> <h3><a href="/event/">ZAWODY</a></h3></li>
     <li> <h3><a href="/competition/">KONKURENCJE</a></h3></li>
