@@ -4,18 +4,6 @@
 <head>
     <title>Zawody</title>
     <link rel="stylesheet" href="/css/style.css">
-<%--    <style>--%>
-<%--        .new {--%>
-<%--            background-color: #111111;--%>
-<%--        }--%>
-
-<%--        th, td {--%>
-<%--            border: 1px solid black;--%>
-<%--            padding: 10px 15px;--%>
-<%--            border-collapse: separate;--%>
-<%--            background-color: cornflowerblue;--%>
-<%--        }--%>
-<%--    </style>--%>
 </head>
 
 <body class="new">
