@@ -4,14 +4,8 @@ package pl.coderslab.war6.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.war6.model.Competition;
-import pl.coderslab.war6.model.Competitor;
-import pl.coderslab.war6.model.Event;
-import pl.coderslab.war6.model.Start;
-import pl.coderslab.war6.repository.CompetitionRepository;
-import pl.coderslab.war6.repository.CompetitorRepository;
-import pl.coderslab.war6.repository.EventRepository;
-import pl.coderslab.war6.repository.StartRepository;
+import pl.coderslab.war6.model.*;
+import pl.coderslab.war6.repository.*;
 import pl.coderslab.war6.util.ViewHelper;
 
 import java.util.*;
@@ -28,11 +22,14 @@ public class CompetitorController {
 
     private final EventRepository eventRepository;
 
-    public CompetitorController(CompetitorRepository competitorRepository, CompetitionRepository competitionRepository, StartRepository startRepository, EventRepository eventRepository) {
+    private final ResultRepository resultRepository;
+
+    public CompetitorController(CompetitorRepository competitorRepository, CompetitionRepository competitionRepository, StartRepository startRepository, EventRepository eventRepository, ResultRepository resultRepository) {
         this.competitorRepository = competitorRepository;
         this.competitionRepository = competitionRepository;
         this.startRepository = startRepository;
         this.eventRepository = eventRepository;
+        this.resultRepository = resultRepository;
     }
 
     @ModelAttribute("allStarts")
@@ -74,6 +71,10 @@ public class CompetitorController {
     public String removeCompetitor(@RequestParam long toRemoveId, @ModelAttribute ViewHelper viewHelper) {
         if(viewHelper.getOption().equals("confirmed")) {
             startRepository.updateToNull(competitorRepository.findById(toRemoveId));
+            List<Result> resultList = resultRepository.findAllByCompetitor(competitorRepository.findById(toRemoveId));
+            for (Result  result : resultList) {
+                resultRepository.delete(result);
+            }
             competitorRepository.deleteById(toRemoveId);
         }
         return "redirect:";
