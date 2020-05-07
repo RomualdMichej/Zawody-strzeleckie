@@ -12,7 +12,7 @@ import java.util.List;
 
 @Component
 @Entity
-@Table(name = "events")
+
 public class Event {
 
     @Id
